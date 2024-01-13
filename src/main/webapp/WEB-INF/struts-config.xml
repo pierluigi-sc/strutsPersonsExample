@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="personForm" type="com.strutsDemo.form.PersonForm" />
+		<form-bean name="personsForm" type="com.strutsDemo.form.PersonsForm" />
+	</form-beans>
+	<action-mappings>
+		<action name="personForm" path="/AddPerson"
+			type="com.strutsDemo.action.PersonAction" scope="request" input="/person.jsp">
+			<forward name="success" path="/person.jsp" />
+		</action>
+		<action name="personsForm" path="/getPersons"
+		    type="com.strutsDemo.action.GetPersonsAction" scope="request" input="/person.jsp">
+			<forward name="success" path="/person.jsp" />
+		</action>
+
+	</action-mappings>
+
+</struts-config>
